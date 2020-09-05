@@ -28,10 +28,27 @@ fn update(_: &mut Context<Msg>, model: &mut Model, msg: Msg){
 
 fn view(model: &Model) -> Html<Msg> {
     html! {
-        
+        <>
+            <div>
+                <h1>{"Todo App"}</h1>
+                <input />
+            </div>
+            <div>
+                <button>{"Delete all Todos!"}</button>
+            </div>
+            <div>
+                <ul>
+
+                </ul>
+            </div>
+        </>
     }
 }
 
 fn main(){
-    println!("Hello, World");
+    let model = Model {
+        todos: vec![],
+        input: "".to_string(),
+    };
+    program(model, update, view);
 }
